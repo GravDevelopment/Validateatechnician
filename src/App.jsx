@@ -73,11 +73,17 @@ function App() {
   return (
     <div className="page">
       <header className="logo">
-        <div className="logo-top">
-          VALIDATE A <span className="chevron chevron-red">&#9654;</span>
-          <span className="chevron chevron-grey">&#9654;</span>
+        <div className="logo-inner">
+          <div className="logo-row">
+            <span className="logo-top">VALIDATE A</span>
+            <svg className="chevrons" viewBox="0 0 70 48" width="46" height="32" aria-hidden="true">
+              <path d="M0,0 L20,0 L34,24 L20,48 L0,48 L14,24 Z" fill="#d31f2f" />
+              <path d="M26,0 L46,0 L60,24 L46,48 L26,48 L40,24 Z" fill="#b7b7b7" />
+            </svg>
+          </div>
+          <div className="logo-line" />
+          <div className="logo-bottom">Technician</div>
         </div>
-        <div className="logo-bottom">Technician</div>
       </header>
 
       <h1 className="section-title">Search</h1>

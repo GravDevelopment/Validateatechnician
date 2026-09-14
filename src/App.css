@@ -9,6 +9,17 @@
   margin-bottom: 40px;
 }
 
+.logo-inner {
+  display: inline-block;
+  text-align: left;
+}
+
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .logo-top {
   font-size: 22px;
   font-weight: 600;
@@ -16,20 +27,16 @@
   color: var(--text-h);
 }
 
-.chevron {
-  display: inline-block;
-  font-size: 20px;
-}
-.chevron-red {
-  color: #d31f2f;
-}
-.chevron-grey {
-  color: #b7b7b7;
+.logo-line {
+  width: 150px;
+  height: 2px;
+  background: #d31f2f;
+  margin: 8px 0 -6px;
 }
 
 .logo-bottom {
   font-family: 'Brush Script MT', 'Segoe Script', cursive;
-  font-size: 56px;
+  font-size: 64px;
   color: #d31f2f;
   line-height: 1.1;
 }
