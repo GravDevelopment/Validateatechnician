@@ -1,0 +1,153 @@
+.page {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo-top {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 6px;
+  color: var(--text-h);
+}
+
+.chevron {
+  display: inline-block;
+  font-size: 20px;
+}
+.chevron-red {
+  color: #d31f2f;
+}
+.chevron-grey {
+  color: #b7b7b7;
+}
+
+.logo-bottom {
+  font-family: 'Brush Script MT', 'Segoe Script', cursive;
+  font-size: 56px;
+  color: #d31f2f;
+  line-height: 1.1;
+}
+
+.section-title {
+  color: #4fb5e8;
+  font-size: 22px;
+  margin: 28px 0 12px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input[type='text'] {
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text);
+  background: var(--bg);
+}
+
+button {
+  padding: 14px 16px;
+  border: none;
+  border-radius: 4px;
+  background: #5a6472;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.error-text {
+  color: #c0392b;
+  margin-top: 12px;
+}
+
+.card {
+  margin-top: 24px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-h);
+}
+.row:last-of-type {
+  border-bottom: none;
+}
+
+.pill {
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+  margin-left: 16px;
+}
+
+.banner {
+  padding: 16px 18px;
+  text-align: center;
+  font-size: 15px;
+}
+.banner a {
+  color: inherit;
+  text-decoration: underline;
+}
+.banner-ok {
+  background: #2e7d32;
+  color: #fff;
+}
+.banner-warning {
+  background: #8a8f98;
+  color: #fff;
+}
+.banner-danger {
+  background: #c0392b;
+  color: #fff;
+}
+
+.help {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.email-btn {
+  display: inline-block;
+  margin: 16px 0;
+  padding: 12px 28px;
+  border-radius: 4px;
+  background: #4caf50;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-numbers {
+  color: var(--text);
+}
+.contact-numbers a {
+  color: var(--accent);
+}
