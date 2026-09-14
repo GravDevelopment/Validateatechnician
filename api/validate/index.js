@@ -5,7 +5,7 @@
 module.exports = async function (context, req) {
   const idNumber = req.query.idNumber
   if (!idNumber) {
-    context.res = { status: 400, jsonBody: { error: 'idNumber is required' } }
+    context.res = { status: 400, body: { error: 'idNumber is required' } }
     return
   }
 
@@ -14,18 +14,18 @@ module.exports = async function (context, req) {
   if (!url || !code) {
     context.res = {
       status: 500,
-      jsonBody: { error: 'CERT_VALIDATE_URL / CERT_VALIDATE_KEY are not configured on this Function App' },
+      body: { error: 'CERT_VALIDATE_URL / CERT_VALIDATE_KEY are not configured on this Function App' },
     }
     return
   }
 
   try {
     const upstream = await fetch(
-      `${url}?idNumber=${encodeURIComponent(idNumber)}&code=${code}`,
+      `${url}?idNumber=${encodeURIComponent(idNumber)}&code=${encodeURIComponent(code)}`,
     )
     const data = await upstream.json()
-    context.res = { status: upstream.status, jsonBody: data }
+    context.res = { status: upstream.status, body: data }
   } catch {
-    context.res = { status: 502, jsonBody: { error: 'Could not reach the validation service' } }
+    context.res = { status: 502, body: { error: 'Could not reach the validation service' } }
   }
 }

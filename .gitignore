@@ -23,3 +23,6 @@ api/local.settings.json
 *.njsproj
 *.sln
 *.sw?
+
+# Visual Studio
+.vs/

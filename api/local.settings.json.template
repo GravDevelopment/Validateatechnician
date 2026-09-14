@@ -3,7 +3,7 @@
   "Values": {
     "AzureWebJobsStorage": "",
     "FUNCTIONS_WORKER_RUNTIME": "node",
-    "CERT_VALIDATE_URL": "https://gravity-learner-kios.azurewebsites.net/api/validate",
+    "CERT_VALIDATE_URL": "https://gravity-learner-kios-g5ghdwfwe4gkbxgm.southafricanorth-01.azurewebsites.net/api/validate",
     "CERT_VALIDATE_KEY": "<function-key-here>"
   }
 }
