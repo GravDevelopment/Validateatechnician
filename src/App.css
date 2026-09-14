@@ -45,7 +45,7 @@
   font-family: var(--heading);
   text-transform: uppercase;
   letter-spacing: 12pt;
-  color: var(--accent);
+  color: #6ec1e4;
   font-size: 20px;
   margin: 28px 0 12px;
 }
@@ -73,29 +73,23 @@ button,
   justify-content: center;
   gap: 8px;
   padding: 12pt 15pt;
-  border: 2pt solid var(--text);
-  border-radius: 50pt;
-  background: transparent;
-  color: var(--text);
+  border: none;
+  border-radius: 3px;
+  background: #69727d;
+  color: #fff;
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-  transition:
-    background-color 0.15s ease,
-    border-color 0.15s ease,
-    color 0.15s ease;
-}
-button:hover:not(:disabled),
-.email-btn:hover {
-  border: 0;
-  background: var(--accent);
-  color: #fff;
 }
 button:disabled {
   opacity: 0.6;
   cursor: default;
+}
+
+.email-btn {
+  background: #61ce70;
 }
 
 .error-text {
