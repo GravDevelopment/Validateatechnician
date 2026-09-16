@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import logo from './assets/validate-a-technician-logo.png'
+import hero from './assets/hero.jpg'
 import './App.css'
 
 function isExpired(revalidationDate) {
@@ -72,51 +72,51 @@ function App() {
   }
 
   return (
-    <div className="page">
-      <header className="logo">
-        <img src={logo} alt="Validate a Technician" />
-      </header>
+    <>
+      <img className="hero" src={hero} alt="Validate a Technician" />
 
-      <h1 className="section-title">Search</h1>
+      <div className="page">
+        <h1 className="section-title">Search</h1>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Please enter Technician Identity Number (as on certificate)"
-          value={idNumber}
-          onChange={(e) => setIdNumber(e.target.value)}
-        />
-        <button type="submit" disabled={status === 'loading'}>
-          {status === 'loading' ? 'Searching…' : 'Search'}
-        </button>
-      </form>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Please enter Technician Identity Number (as on certificate)"
+            value={idNumber}
+            onChange={(e) => setIdNumber(e.target.value)}
+          />
+          <button type="submit" disabled={status === 'loading'}>
+            {status === 'loading' ? 'Searching…' : 'Search'}
+          </button>
+        </form>
 
-      {status === 'error' && <p className="error-text">{error}</p>}
+        {status === 'error' && <p className="error-text">{error}</p>}
 
-      {status === 'done' && records && records.length === 0 && (
-        <div className="card">
-          <div className="banner banner-danger">
-            No certificate was found for that ID number.
+        {status === 'done' && records && records.length === 0 && (
+          <div className="card">
+            <div className="banner banner-danger">
+              No certificate was found for that ID number.
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {status === 'done' &&
-        records &&
-        records.map((record, i) => <Record key={i} record={record} />)}
+        {status === 'done' &&
+          records &&
+          records.map((record, i) => <Record key={i} record={record} />)}
 
-      <section className="help">
-        <h2 className="section-title">Having Trouble?</h2>
-        <p>Contact our Certification Department for assistance</p>
-        <a className="email-btn" href="mailto:certification@gravitytraining.co.za">
-          ✉ Send Email
-        </a>
-        <p className="contact-numbers">
-          Or call us at: <a href="tel:0861101213">086 110 1213</a> |{' '}
-          <a href="tel:+27123491318">+27 12 349 1318</a>
-        </p>
-      </section>
-    </div>
+        <section className="help">
+          <h2 className="section-title">Having Trouble?</h2>
+          <p>Contact our Certification Department for assistance</p>
+          <a className="email-btn" href="mailto:certification@gravitytraining.co.za">
+            ✉ Send Email
+          </a>
+          <p className="contact-numbers">
+            Or call us at: <a href="tel:0861101213">086 110 1213</a> |{' '}
+            <a href="tel:+27123491318">+27 12 349 1318</a>
+          </p>
+        </section>
+      </div>
+    </>
   )
 }
 
