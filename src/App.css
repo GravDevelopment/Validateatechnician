@@ -9,36 +9,9 @@
   margin-bottom: 40px;
 }
 
-.logo-inner {
-  display: inline-block;
-  text-align: left;
-}
-
-.logo-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo-top {
-  font-family: var(--heading);
-  font-size: 22px;
-  letter-spacing: 6px;
-  color: var(--text-h);
-}
-
-.logo-line {
-  width: 150px;
-  height: 2px;
-  background: #d31f2f;
-  margin: 8px 0 -6px;
-}
-
-.logo-bottom {
-  font-family: 'Brush Script MT', 'Segoe Script', cursive;
-  font-size: 64px;
-  color: #d31f2f;
-  line-height: 1.1;
+.logo img {
+  max-width: 100%;
+  height: auto;
 }
 
 .section-title {
