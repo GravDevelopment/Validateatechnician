@@ -2,6 +2,13 @@
   display: block;
   width: 100%;
   height: auto;
+  /* Crops to the banner/logo strip of the source photo — a fixed
+     aspect ratio (rather than a fixed pixel height) keeps that same
+     crop at every screen width, so the logo never gets cut off on
+     wide screens or shrunk to nothing on narrow ones. */
+  aspect-ratio: 1920 / 430;
+  object-fit: cover;
+  object-position: top;
 }
 
 .page {
