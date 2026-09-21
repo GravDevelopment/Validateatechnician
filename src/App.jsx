@@ -2,6 +2,10 @@ import { useState } from 'react'
 import hero from './assets/hero.jpg'
 import './App.css'
 
+// Empty during `npm run dev` (Vite serves /api/validate itself); set to the
+// Azure Function App origin in .env.production for the GitHub Pages build.
+const API_BASE = import.meta.env.VITE_API_BASE ?? ''
+
 function isExpired(revalidationDate) {
   return new Date(revalidationDate) < new Date()
 }
@@ -60,7 +64,7 @@ function App() {
     setStatus('loading')
     setError('')
     try {
-      const res = await fetch(`/api/validate?idNumber=${encodeURIComponent(id)}`)
+      const res = await fetch(`${API_BASE}/api/validate?idNumber=${encodeURIComponent(id)}`)
       if (!res.ok) throw new Error('Lookup failed, please try again.')
       const data = await res.json()
       setRecords(data.records ?? [])

@@ -2,5 +2,8 @@
   "name": "validateatechnicain-api",
   "private": true,
   "version": "0.0.0",
-  "main": "validate/index.js"
+  "main": "validate/index.js",
+  "dependencies": {
+    "@azure/functions": "^4.7.0"
+  }
 }

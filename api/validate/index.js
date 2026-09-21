@@ -1,12 +1,18 @@
-// Azure Function wrapper — keeps the function key server-side. See
-// handler.js for the actual proxy logic (shared with local Vite dev).
+// Azure Function (v4 programming model) — keeps the function key
+// server-side. See handler.js for the proxy logic, shared with local Vite dev.
+const { app } = require('@azure/functions')
 const validate = require('./handler')
 
-module.exports = async function (context, req) {
-  const idNumber = req.query.idNumber
-  if (!idNumber) {
-    context.res = { status: 400, body: { error: 'idNumber is required' } }
-    return
-  }
-  context.res = await validate(idNumber)
-}
+app.http('validate', {
+  methods: ['GET'],
+  authLevel: 'anonymous',
+  route: 'validate',
+  handler: async (request) => {
+    const idNumber = request.query.get('idNumber')
+    if (!idNumber) {
+      return { status: 400, jsonBody: { error: 'idNumber is required' } }
+    }
+    const { status, body } = await validate(idNumber)
+    return { status, jsonBody: body }
+  },
+})
