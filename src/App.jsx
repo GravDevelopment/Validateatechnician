@@ -70,7 +70,10 @@ function App() {
       })
       if (!res.ok) throw new Error('Lookup failed, please try again.')
       const data = await res.json()
-      setRecords(data.records ?? [])
+      const all = data.records ?? []
+      // A fraud flag overrides everything: show only the flagged record(s).
+      const flagged = all.filter((r) => r.fraudulent)
+      setRecords(flagged.length ? flagged : all)
       setStatus('done')
     } catch (err) {
       setError(err.message)
